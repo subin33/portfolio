@@ -50,7 +50,7 @@
   }
 
   .title-move-up {
-    transform: translateY(-200px); /* 모바일에서는 이동 거리를 조정 */
+    transform: translateY(-180px); /* 모바일에서는 이동 거리를 조정 */
   }
   .app-ui {
     width: 150px;  /* 기존 크기보다 줄임 */
