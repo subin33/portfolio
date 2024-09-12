@@ -1,0 +1,326 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+/* Web Fonts : Playfair Display */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+/* font-family: 'Playfair Display', serif; */
+
+/* XEION CDN */
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+*{
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.5em;
+}
+
+/* Toggle Trigger */
+.toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 100;
+}
+.toggle i{
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  background-color: #000000;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px; /*height 값만 큼 주면, 가운대로 */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: 0.5s;
+}
+.toggle.active i{
+  background-color: yellowgreen;
+  transform: rotate(315deg);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  background-color: rgb(0, 0, 0);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.overlay.active{
+  transform: scale(130);
+  opacity: 1;
+}
+
+/* Common CSS */
+section {
+  height: 100vh;
+  /* height: auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* odd -> 홀수 , even -> 짝수*/
+section:nth-child(even){
+  background-color: #f8f8f8;
+}
+
+section .inner{
+  width: 1150px;
+  text-align: center;
+}
+
+
+/* Section : Welcome */
+section.welcome{
+  /* border: 5px solid red; */
+  height: 100vh;
+  width: 100%;
+  background-color: #252934;
+}
+/* object-fit: cover;란 ? 이미지나 비디오가 부모 요소의 크기에 맞게 잘리더라도 비율을 유지하면서 꽉 차도록 표시하는 css속성 
+object-fit: cover; 을 사용하기 위한 조건으로 꼭 부모 요소에 가로 넓이와 세로 크기가 있어야하고, 그 값을 자식 요소가 받아와야한다.  */
+/* section.welcome img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+} */
+
+/* Falling stars styles */
+.star {
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: 2px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  animation: fall linear infinite, fade-out 6s ease-in forwards;
+}
+
+/* Fade out effect for stars */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Falling animation */
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Different star sizes */
+.small {
+  width: 1px;
+  height: 1px;
+  animation-duration: 5s;
+}
+
+.medium {
+  width: 2px;
+  height: 2px;
+  animation-duration: 7s;
+}
+
+.large {
+  width: 3px;
+  height: 3px;
+  animation-duration: 9s;
+}
+
+/* Different star colors */
+.color-1 {
+  background-color: rgba(255, 255, 255, 0.8); /* 기본 흰색 */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.color-2 {
+  background-color: rgba(173, 216, 230, 0.8); /* 연한 파란색 */
+  box-shadow: 0 0 8px rgba(173, 216, 230, 0.8);
+}
+
+.color-3 {
+  background-color: rgba(255, 182, 193, 0.8); /* 연한 분홍색 */
+  box-shadow: 0 0 8px rgba(255, 182, 193, 0.8);
+}
+
+
+
+.introduction{
+  color: #fff;
+  font-size: 60px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.842);
+  transition: transform 1s ease-in-out; /* 글자가 위로 올라가는 애니메이션 */
+}
+
+.title-color {
+  color: #FD8A69;
+  font-size: 70px;
+  text-shadow: 1px 1px 2px rgba(251, 153, 26, 0.983);
+}
+
+.title-move-up {
+  transform: translateY(-250px); /* 글자를 위로 250px 이동 */
+}
+
+
+#app-ui-container {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 550px; /* 적절한 위치로 설정 */
+  left: 44%;
+  transform: translateX(-44%);
+  animation: float 1s ease-in-out infinite; /* 위아래로 흔들리는 애니메이션 */
+  transition: opacity 2s ease-in;
+  cursor: pointer;
+}
+
+/* 아이콘에 위아래로 흔들리는 효과 추가 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0); /* 원래 위치 */
+  }
+  50% {
+    transform: translateY(-15px); /* 위로 이동 */
+  }
+}
+
+
+
+/* SNS 아이콘 스타일은 기존과 동일 */
+.app-ui {
+  /* border: 1px solid red; */
+  width: 250px;
+  height: 400px;
+  /* skewX 대각선으로 기울이기  rotate 기울이기 */
+  transform: rotate(-30deg) skewX(13deg);
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  background-color: #eee;
+  border-radius: 5px;
+  
+}
+.app-ui:hover {
+  box-shadow: -50px 100px 60px rgba(0, 0, 0, 0.3);
+}
+.app-ui img {
+  position: absolute;
+  transition: 0.5s;
+  width: 100%;    /* 부모 요소인 .app-ui와 동일한 너비 */
+  height: 100%;   /* 부모 요소와 동일한 높이 */
+  border-radius: 5px;
+}
+
+/* app-ui에 마우스를 올리면 그 자식인 img의 첫번째 요소를 어떻게 할거야 */
+.app-ui:hover img:nth-child(1) {
+  transform: translate(25px, -25px);
+  opacity: 0.2;
+}
+.app-ui:hover img:nth-child(2) {
+  transform: translate(50px, -50px);
+  opacity: 0.4;
+}
+.app-ui:hover img:nth-child(3) {
+  transform: translate(75px, -75px);
+  opacity: 0.6;
+}
+.app-ui:hover img:nth-child(4) {
+  transform: translate(100px, -100px);
+}
+
+
+
+.heading {}
+.heading h1 {
+  font-size: 3em;
+  padding-bottom: 40px;
+  position: relative;
+}
+.heading h1::before{
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 4px;
+  background-color: crimson;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.heading p {
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+
+
+
+  /*.gnb a {
+ display: block; 을 사용하면 안되는 이유 : 세로 배치를 하고 싶어 사용할 경우, 우리는 before 를 글자길이만큼 효과를 줄건데, 제일 긴 글자 만큼 밑줄이 생기기 때문에 안된다. 그래서 div 안에 a 테그가 아닌 ul li 를 사용했다. 
+  display: block;
+} */
+.gnb {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 100;
+}
+.gnb.active {
+  opacity: 1;
+  visibility: visible;
+}
+.gnb a{
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif; 
+  font-size: 3.5em;
+  line-height: 1.6em;
+  position: relative;
+  padding-right: 20px;
+}
+
+.gnb a:after{
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 0%;
+  background-color: yellowgreen;
+  left: 0;
+  bottom: 7px;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.gnb a:hover::after{
+  width: 100%;
+}
