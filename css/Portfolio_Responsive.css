@@ -33,6 +33,7 @@
   
   .introduction {
     display: block;
+    width: 100%;
     height: auto;
     white-space: pre-line; /* 줄바꿈을 허용 */
   }
@@ -49,7 +50,7 @@
   }
 
   .title-move-up {
-    transform: translateY(-250px); /* 모바일에서는 이동 거리를 조정 */
+    transform: translateY(-200px); /* 모바일에서는 이동 거리를 조정 */
   }
   .app-ui {
     width: 150px;  /* 기존 크기보다 줄임 */
