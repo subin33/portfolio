@@ -36,7 +36,6 @@ function createStar() {
 
 // 일정 시간마다 새로운 별 생성
 setInterval(createStar, 300);
-
 const typeit = new TypeIt("#typeit", {
   speed: 80, // 속도
   startDelay: 1300, // 시작 딜레이 1.3초
@@ -59,15 +58,19 @@ const typeit = new TypeIt("#typeit", {
   },
 });
 
+// 모바일 화면 체크
+const isMobile = window.innerWidth <= 768;
+
 typeit
   .type("안녕하세요")
-  .type(" ")
-  .type('<strong class="title-color">Front-end Developer</strong>')
-  .type(" ")
+  .type(isMobile ? "<br>" : " ") // 모바일이면 줄바꿈, 아니면 띄어쓰기
+  .type('<strong class="title-color">Front-end</strong>')
+  .type(isMobile ? "<br>" : " ") // 모바일이면 줄바꿈, 아니면 띄어쓰기
+  .type('<strong class="title-color">Developer</strong>')
+  .type(isMobile ? "<br>" : " ") // 모바일이면 줄바꿈, 아니면 띄어쓰기
   .type("<strong>NOH SU BIN </strong>", { delay: 300 })
   .delete(11, { delay: 400 })
   .type("<strong> 노수빈 </strong>입니다 !", { speed: 80 })
-  .type(" ")
   .go();
 
 // #app-ui-container 클릭 시 About 섹션으로 스크롤

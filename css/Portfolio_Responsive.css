@@ -24,4 +24,54 @@
   .gnb a {
     font-size: 2.2em;
   }
+
+
+  
+  .introduction {
+    display: block;
+    white-space: pre-line; /* 줄바꿈을 허용 */
+  }
+
+  #typeit {
+    text-align: center;
+    display: block;
+    font-size: 40px; /* 모바일에 맞는 폰트 크기 조정 */
+    line-height: 1.5; /* 줄 간격 조정 */
+  }
+
+  .title-color {
+    font-size: 45px; /* 모바일에서 폰트 크기 조정 */
+  }
+
+  .title-move-up {
+    transform: translateY(-150px); /* 모바일에서는 이동 거리를 조정 */
+  }
+  .app-ui {
+    width: 170px;  /* 기존 크기보다 줄임 */
+    height: 270px; /* 기존 크기보다 줄임 */
+    transform: rotate(-30deg) skewX(13deg);
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+    background-color: #eee;
+    border-radius: 5px;
+    bottom: -150px;
+  }
+
+  .app-ui img:nth-child(1) {
+    transform: translate(20px, -20px);
+    opacity: 0.2;
+  }
+  .app-ui img:nth-child(2) {
+    transform: translate(40px, -40px);
+    opacity: 0.4;
+  }
+  .app-ui img:nth-child(3) {
+    transform: translate(60px, -60px);
+    opacity: 0.6;
+  }
+  .app-ui img:nth-child(4) {
+    transform: translate(80px, -80px);
+  }
+  
 }

@@ -190,7 +190,7 @@ object-fit: cover; 을 사용하기 위한 조건으로 꼭 부모 요소에 가
 
 
 #app-ui-container {
-  display: inline-block; /* block 또는 inline-block으로 변경 */
+  display:none; /* block 또는 inline-block으로 변경 */
   opacity: 0; /* opacity만 남기고 display는 변경 */
   position: absolute;
   width: auto; /* 혹은 적절한 고정값 예: width: 300px; */
