@@ -23,6 +23,7 @@ body{
   font-weight: 300;
   margin: 0;
   line-height: 1.5em;
+  overflow-x: hidden;
 }
 
 /* Toggle Trigger */
@@ -190,12 +191,13 @@ object-fit: cover; 을 사용하기 위한 조건으로 꼭 부모 요소에 가
 #app-ui-container {
   display: none;
   opacity: 0;
-  position: absolute;
+  /* position: absolute;
   width: 0;
-  left: 45%;
-  top: 47%;
-  transform: translate(-50% , -50%);
-
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%); */
+  position: fixed;
+  top: 50%;
   animation: float 1s ease-in-out infinite; /* 위아래로 흔들리는 애니메이션 */
   transition: opacity 2s ease-in;
   cursor: pointer;
