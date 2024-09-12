@@ -1,4 +1,8 @@
 @media(max-width : 768px){
+  html, body {
+    overflow-x: hidden;
+  }
+
   /* Commom CSS */
   section:not(.welcome) {
     height: auto;
@@ -48,8 +52,8 @@
     transform: translateY(-250px); /* 모바일에서는 이동 거리를 조정 */
   }
   .app-ui {
-    width: 170px;  /* 기존 크기보다 줄임 */
-    height: 270px; /* 기존 크기보다 줄임 */
+    width: 150px;  /* 기존 크기보다 줄임 */
+    height: 250px; /* 기존 크기보다 줄임 */
     transform: rotate(-30deg) skewX(13deg);
     position: relative;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
