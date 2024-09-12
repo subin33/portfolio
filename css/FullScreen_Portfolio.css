@@ -71,7 +71,7 @@ body{
 
 /* Common CSS */
 section {
-  height: 100vh;
+  height: auto;
   /* height: auto; */
   display: flex;
   justify-content: center;
