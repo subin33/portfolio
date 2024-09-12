@@ -95,6 +95,7 @@ section.welcome{
   height: 100vh;
   width: 100%;
   background-color: #252934;
+  position: relative; /* 이 부분 추가 */
 }
 /* object-fit: cover;란 ? 이미지나 비디오가 부모 요소의 크기에 맞게 잘리더라도 비율을 유지하면서 꽉 차도록 표시하는 css속성 
 object-fit: cover; 을 사용하기 위한 조건으로 꼭 부모 요소에 가로 넓이와 세로 크기가 있어야하고, 그 값을 자식 요소가 받아와야한다.  */
@@ -189,19 +190,18 @@ object-fit: cover; 을 사용하기 위한 조건으로 꼭 부모 요소에 가
 
 
 #app-ui-container {
-  display: none;
-  opacity: 0;
-  /* position: absolute;
-  width: 0;
-  left: 50%;
+  display: inline-block; /* block 또는 inline-block으로 변경 */
+  opacity: 0; /* opacity만 남기고 display는 변경 */
+  position: absolute;
+  width: auto; /* 혹은 적절한 고정값 예: width: 300px; */
+  left: calc(50% -10px); /* 필요한 만큼 미세하게 조정 */
   top: 50%;
-  transform: translate(-50% , -50%); */
-  position: fixed;
-  top: 50%;
-  animation: float 1s ease-in-out infinite; /* 위아래로 흔들리는 애니메이션 */
+  transform: translate(-50% , -50%);
+  animation: float 1s ease-in-out infinite;
   transition: opacity 2s ease-in;
   cursor: pointer;
 }
+
 
 /* 아이콘에 위아래로 흔들리는 효과 추가 */
 @keyframes float {
