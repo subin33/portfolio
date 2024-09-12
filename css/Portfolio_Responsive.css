@@ -29,6 +29,7 @@
   
   .introduction {
     display: block;
+    height: auto;
     white-space: pre-line; /* 줄바꿈을 허용 */
   }
 
@@ -44,7 +45,7 @@
   }
 
   .title-move-up {
-    transform: translateY(-150px); /* 모바일에서는 이동 거리를 조정 */
+    transform: translateY(-160px); /* 모바일에서는 이동 거리를 조정 */
   }
   .app-ui {
     width: 170px;  /* 기존 크기보다 줄임 */
@@ -55,7 +56,7 @@
     transition: 0.5s;
     background-color: #eee;
     border-radius: 5px;
-    bottom: -150px;
+    bottom: -100px;
   }
 
   .app-ui img:nth-child(1) {
